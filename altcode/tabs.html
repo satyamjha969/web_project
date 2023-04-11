@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>sql notes</title>
+  <link rel="stylesheet" href="tab_style.css" />
+  <title>SQL</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>INRO TO SQL :</h1>
+    <nav>
+      <ul>
+        <li><a href="#ddl">DDL</a></li>
+        <li><a href="#dml">DML</a></li>
+        <li><a href="#dql">DQL</a></li>
+        <li><a href="#tcl">TCL</a></li>
+
+        <li><a href="#intro">intro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <main>
+
+    <section id="intro">
+      <br><br>
+      <p>
+        SQL is a standard language for accessing and manipulating databases. What is
+        SQL? SQL stands for Structured Query Language SQL lets you access and
+        manipulate databases SQL became a standard of the American National
+        Standards Institute (ANSI) in 1986, and of the International Organization
+        for Standardization (ISO) in 1987 What Can SQL do? SQL can execute queries
+        against a database SQL can retrieve data from a database SQL can insert
+        records in a database SQL can update records in a database SQL can delete
+        records from a database SQL can create new databases SQL can create new
+        tables in a database SQL can create stored procedures in a database SQL can
+        create views in a database SQL can set permissions on tables, procedures,
+        and views SQL is a Standard - BUT.... Although SQL is an ANSI/ISO standard,
+        there are different versions of the SQL language. However, to be compliant
+        with the ANSI standard, they all support at least the major commands (such
+        as SELECT, UPDATE, DELETE, INSERT, WHERE) in a similar manner. Note: Most of
+        the SQL database programs also have their own proprietary extensions in
+        addition to the SQL standard! Using SQL in Your Web Site To build a web site
+        that shows data from a database, you will need: An RDBMS database program
+        (i.e. MS Access, SQL Server, MySQL) To use a server-side scripting language,
+        like PHP or ASP To use SQL to get the data you want To use HTML / CSS to
+        style the page RDBMS RDBMS stands for Relational Database Management System.
+        RDBMS is the basis for SQL, and for all modern database systems such as MS
+        SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access. The data in RDBMS
+        is stored in database objects called tables. A table is a collection of
+        related data entries and it consists of columns and rows. Look at the
+        "Customers" table:</p>
+      <br />
+      <br /><br />
+      <h3>Example Get your own SQL Server</h3>
+      <b> SELECT * FROM Customers; <br /><br /><br /></b>
+      <i>Every table is broken up into smaller entities called fields. The fields
+        in the Customers table consist of CustomerID, CustomerName, ContactName,
+        Address, City, PostalCode and Country. A field is a column in a table that
+        is designed to maintain specific information about every record in the
+        table. A record, also called a row, is each individual entry that exists
+        in a table. For example, there are 91 records in the above Customers
+        table. A record is a horizontal entity in a table. A column is a vertical
+        entity in a table that contains all information associated with a specific
+        field in a table. ddl commands</i>
+      <br /><br />
+      <h1>SQL | DDL, DQL, DML, DCL and TCL Commands</h1>
+      <br /><br />
+
+      <b>
+        Structured Query Language(SQL) as we all know is the database language by
+        the use of which we can perform certain operations on the existing
+        database and also we can use this language to create a database. SQL uses
+        certain commands like Create, Drop, Insert, etc. to carry out the required
+        tasks. These SQL commands are mainly categorized into five categories as:
+      </b>
+      <br /><br />
+      <h2>
+        DDL : Data Definition Language <br />
+        DQL : Data Query Language <br />
+        DML : Data Manipulation Language <br />
+        DCL : Data Control Language <br> TCL : Transaction Control Language
+      </h2>
+      <br /><br />
+      Now, we will see all of these in detail.<br />
+    </section>
+
+
+
+
+
+
+
+
+
+    <section id="ddl">
+      <H2> DDL (Data Definition Language):
+        <br /><br />
+      </H2>
+      <p>
+        DDL or Data Definition Language actually consists of the SQL commands that
+        can be used to define the database schema. It simply deals with descriptions
+        of the database schema and is used to create and modify the structure of
+        database objects in the database. DDL is a set of SQL commands used to
+        create, modify, and delete database structures but not data. These commands
+        are normally not used by a general user, who should be accessing the
+        database via an application.</p>
+      <br /><br />
+      List of DDL commands:
+      <br /><br />
+      CREATE: This command is used to create the database or its objects (like
+      table, index, function, views, store procedure, and triggers).
+      <br /><br />
+      DROP: This command is used to delete objects from the database. <br />
+      <br />
+      ALTER: This is used to alter the structure of the database. <br />
+      <br />
+      TRUNCATE: This is used to remove all records from a table, including all
+      <br />
+      spaces allocated for the records are removed. <br />
+      <br />
+      COMMENT: This is used to add comments to the data dictionary. <br />
+      <br />
+      RENAME: This is used to rename an object existing in the database. <br />
+
+
+
+      <h2> <br><br> Command-1 :
+        CREATE :</h2><br>
+      <br><br>
+      <p> command is used to create a new table in SQL. The user has to give information like table name, column names,
+        and their datatypes.
+      </p><br><br>
+      Syntax :
+      <br><br>
+      <h3> TABLE table_name
+        (
+        column_1 datatype,
+        column_2 datatype,
+        column_3 datatype,
+
+        );</h3>
+
+      <h2> Example</h2> <br>
+      We need to create a table for storing Student information of a particular College. Create syntax would be as
+      below.
+      <br><br>
+      <h3>
+        <br><br> CREATE TABLE Student_info
+        (
+        College_Id number(2),
+        <br> College_name varchar(30),
+        <br> Branch varchar(10)
+        <br> );
+      </h3>
+      <br><br>
+      <h2> Command-2 :</h2>
+      ALTER : <br><br>
+      This command is used to add, delete or change columns in the existing table. The user needs to know the existing
+      table name and can do add, delete or modify tasks easily.
+      <br><br>
+      <h3> Syntax : <br>
+      </h3> Syntax to add a column to an existing table.
+      <h4></h4> <br><br>
+      ALTER TABLE table_name
+      <br> ADD column_name datatype;
+      </h4>
+      <h2>
+        <br><br> Example :
+      </h2> our Student_info table, we want to add a new column for CGPA. The syntax would be as below as follows.
+      <h3><br><br>
+        ALTER TABLE Student_info <br>
+        ADD CGPA number;<br>
+      </h3>
+      <h2><br><br>
+        Command-3 : <br>
+        TRUNCATE <br>
+      </h2><br><br> This command is used to remove all rows from the table, but the structure of the table still exists.
+      <br>
+      Syntax <br>
+      Syntax to remove an existing table.
+      <br><br>
+      <h3>
+        TRUNCATE TABLE table_name;
+        <br>
+      </h3>
+      <h3> Example : <br>
+      </h3> The College Authority wants to remove the details of all students for new batches but wants to keep the
+      table structure. The command they can use is as follows.
+      <br><br>
+      <h3>
+        TRUNCATE TABLE Student_info;</h3><br>
+      <br>
+      <h2>
+        Command-4 :br
+        DROP :</h2><br><br>
+      This command is used to remove an existing table along with its structure from the Database.
+      <br><br>
+      Syntax : <br><br>
+      Syntax to drop an existing table.
+      <br><br>
+      DROP TABLE table_name;
+      <br><br>
+      <h2>
+        Example : <br><br>
+        If the College Authority wants to change their Database by deleting the Student_info Table.
+        <br>
+      </h2>
+      <h3>
+        DROP TABLE Student_info;
+      </h3>
+      <h2><br><br>
+        Command -5
+        <br>
+        RENAME:
+      </h2><br>
+      <h3> It is possible to change name of table with or without data in it using simple RENAME command.
+        <br>
+        We can rename any table object at any point of time.
+      </h3><br>
+      Syntax:
+      <br>
+      RENAME TABLE <Table Name> To <New_Table_Name>;
+          <br>
+          Example:
+          <br>
+          <p> you want to change the name of the table from Employee to Emp we can use rename command as
+            <br>
+          </p>
+          <h3> RENAME TABLE Employee To EMP;</h3><br>
+
+
+
+
+
+
+
+          <br />
+    </section>
+
+    <section id="dml">
+      <h2>
+        DML(Data Manipulation Language):
+        <br /><br />
+      </h2>
+      The SQL commands that deals with the manipulation of data present in the
+      database belong to DML or Data Manipulation Language and this includes most
+      of the SQL statements. It is the component of the SQL statement that
+      controls access to data and to the database. Basically, DCL statements are
+      grouped with DML statements.
+      <br /><br />
+      List of DML commands:
+      <br /><br />
+
+      INSERT : It is used to insert data into a table. <br />
+      <br />
+      UPDATE: It is used to update existing data within a table. <br />
+      <br />
+      DELETE : It is used to delete records from a database table. <br />
+      <br />
+      LOCK: Table control concurrency. <br />
+      <br />
+      CALL: Call a PL/SQL or JAVA subprogram. <br />
+      <br />
+
+
+
+      <br><br>
+      <H2> SELECT DML Command
+      </H2>
+      <p> <br>
+        SELECT is the most important data manipulation command in Structured Query Language. The SELECT command shows
+        the records of the specified table. It also shows the particular record of a particular column by using the
+        WHERE clause.
+      <h3><br>
+
+        Syntax of SELECT DML command
+      </h3><br>
+      SELECT column_Name_1, column_Name_2, ….., column_Name_N FROM Name_of_table;
+      <br><br>
+      Here, column_Name_1, column_Name_2, ….., column_Name_N are the names of those columns whose data we want to
+      retrieve from the table.
+
+      If we want to retrieve the data from all the columns of the table, we have to use the following SELECT command:
+      <br><br>
+      <h3>
+        SELECT * FROM table_name;
+        <br>
+        <br> Examples of SELECT Command
+      </h3>
+      <h2>
+        Example 1: This example shows all the values of every column from the table.
+        <br>
+      </h2>
+      <h3> SELECT * FROM Student;
+        <br>
+      </h3><br>
+
+      <h2><br>
+        INSERT DML Command
+      </h2><br><br>
+      INSERT is another most important data manipulation command in Structured Query Language, which allows users to
+      insert data in database tables.
+      <br>
+      Syntax of INSERT Command
+      <br>
+      <h3>
+        INSERT INTO TABLE_NAME ( column_Name1 , column_Name2 , column_Name3 , .... column_NameN ) VALUES (value_1,
+        value_2, value_3, .... value_N ) ;
+        <br><br>
+      </h3>
+      Examples of INSERT Command
+      <h4>
+        Example 1: This example describes how to insert the record in the database table.
+      </h4><br><br>
+      Let's take the following student table, which consists of only 2 records of the student. <br>
+      Stu_Id Stu_Name Stu_Marks Stu_Age <br>
+      101 Ramesh 92 20 <br>
+      201 Jatin 83 19 <br>
+      <br><br>
+      Suppose, you want to insert a new record into the student table. For this, you have to write the following DML
+      INSERT command:
+      <br><br>
+      <h3>
+        INSERT INTO Student (Stu_id, Stu_Name, Stu_Marks, Stu_Age) VALUES (104, Anmol, 89, 19);
+      </h3>
+      <h2><br>
+        UPDATE DML Command
+      </h2><br><br>
+      UPDATE is another most important data manipulation command in Structured Query Language, which allows users to
+      update or modify the existing data in database tables.
+      <br>
+      Syntax of UPDATE Command
+      <br>
+      <h4>
+        UPDATE Table_name SET [column_name1= value_1, ….., column_nameN = value_N] WHERE CONDITION;
+      </h4>
+      Here, 'UPDATE', 'SET', and 'WHERE' are the SQL keywords, and 'Table_name' is the name of the table whose values
+      you want to update.
+      <br>
+      <h4> Examples of the UPDATE command
+      </h4><br>
+      Example 1: This example describes how to update the value of a single field.
+      <br>
+      Let's take a Product table consisting of the following records: <br> <br>
+      <table>
+        <tr>
+          <th>product_id</th>
+
+          <th>
+
+            Product_Name </th>
+          <th> Product_Price </th>
+          <th> Product_Quantity </th>
+        </tr>
+        <tr>
+          <td>p00</td>
+          <td> redbull</td>
+          <td> Chips</td>
+          <td> 20
+          </td>
+        </tr>
+        <tr>
+          <td> P102 </td>
+            <td>monster</td>
+            <td> 60</td>
+            <td> 40 </td>
+        </tr>
+        <tr>
+          <td> p10 </td>
+          <td>cookie</td>
+          <td> 75</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td> P201 </td>
+          <td>snacks</td>
+          <td> 80</td>
+          <td>10
+          </td>
+        </tr>
+        <tr>
+          <td> p20 </td>
+          <td>rusk</td>
+          <td> 40 </td>
+          <td>2
+          </td>
+        </tr>
+      </table>
+
+      <br><br>
+      Suppose, you want to update the Product_Price of the product whose Product_Id is P102. To do this, you have to
+      write the following DML UPDATE command:
+      <br>
+      <h3> UPDATE Product SET Product_Price = 80 WHERE Product_Id = 'P102' ;
+      </h3><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+    <section id="dql"> <br>
+      <h2> DQL (Data Query Language):
+        <br />
+      </h2>
+      <br />
+      DQL statements are used for performing queries on the data within schema
+      objects. The purpose of the DQL Command is to get some schema relation based
+      on the query passed to it. We can define DQL as follows it is a component of
+      SQL statement that allows getting data from the database and imposing order
+      upon it. It includes the SELECT statement. This command allows getting the
+      data out of the database to perform operations with it. When a SELECT is
+      fired against a table or tables the result is compiled into a further
+      temporary table, which is displayed or perhaps received by the program i.e.
+      a front-end.
+      <br />
+      <br />
+      List of DQL:
+      <br /><br />
+      SELECT: It is used to retrieve data from the database.
+      <br /><br />
+
+      EXPLAIN PLAN: It describes the access path to data. <br /><br />
+      DCL (Data Control Language):
+      <br /><br />
+      DCL includes commands such as GRANT and REVOKE which mainly deal with the
+      rights, permissions, and other controls of the database system.
+      <br /><br />
+      List of DCL commands:
+      <br />
+      <br />
+      GRANT: This command gives users access privileges to the database. <br />
+      <br />
+      REVOKE: This command withdraws the user's access privileges given by using
+      the GRANT command. <br /><br />
+    </section>
+
+
+
+
+
+    <section id="tcl">
+      <br>
+      <h2>
+        TCL (Transaction Control Language):
+        <br />
+      </h2>
+      <br />
+      Transactions group a set of tasks into a single execution unit. Each
+      transaction begins with a specific task and ends when all the tasks in the
+      group successfully complete. If any of the tasks fail, the transaction
+      fails. Therefore, a transaction has only two results: success or failure.
+      You can explore more about transactions here. Hence, the following TCL
+      commands are used to control the execution of a transaction:
+      <br />
+      <br />
+      BEGIN: Opens a Transaction. <br />
+      <br />
+      COMMIT: Commits a Transaction. <br />
+      <br />
+      ROLLBACK: Rollbacks a transaction in case of any error occurs. <br />
+      <br />
+      SAVEPOINT: Sets a save point within a transaction. <br />
+      <br />
+      SET TRANSACTION: Specifies characteristics for the transaction.
+
+
+    </section>
+
+
+
+
+
+
+
+  </main>
+
+
+
+</body>
+
+</html>
